@@ -52,6 +52,12 @@ import acm.program.*;
 import acm.graphics.*; 
 
 public class PRNSG extends GraphicsProgram{
+	// setting constants for para
+	private static final int MIN_SIZE = 5;
+	private static final int MAX_SIZE =50;
+	private static final int AMOUNT_OF_CIRCLES=10;
+	private static final int BOUNDRY_X= getWidth();
+	private static final int BOUNDRY_y= getHeight();
 
 	public void run () {
 		
