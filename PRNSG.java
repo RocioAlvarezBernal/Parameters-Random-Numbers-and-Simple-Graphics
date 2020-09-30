@@ -62,28 +62,56 @@ public class PRNSG extends GraphicsProgram {
 	private static final int MIN_SIZE = 5;
 	private static final int MAX_SIZE = 50;
 	private static final int AMOUNT_OF_CIRCLES = 10;
-//	private static final int BOUNDRY_X = getWidth();
-//	private static final int BOUNDRY_Y = getHeight();
-//    Random rand = new Random(); 
+	int boundryX = getWidth();
+	int boundryY = getHeight();
+	Random rand = new Random();
 
-	public void run () {
-		// since we know how many 10 circles create a circle randomly until all 10 are on screen 
-		for (int i=1; i<=10; i++) {
+	public void run() {
+		// since we know how many 10 circles create a circle randomly until all 10 are
+		// on screen
+		for (int i = 1; i <= 10; i++) {
 			createCircles();
+			randomSize();
+			randomPlace();
+			
 		}
 	}
+
+	public void createCircles() {
+//		int boundryX = getWidth();
+//		int boundryY = getHeight();
+		
+//		int randomX = rand.nextInt(boundryX);
+//		int randomY = rand.nextInt(boundryY);
+
+//		int randomW = rand.nextInt(randomSize());
+//		Random randomW = ( randomSize() );
+//		int randomH = rand.nextInt(randomSize());
+//		Random randomH = ( randomSize() );
+		
+//		GOval circles = new GOval (randomX, randomY, randomW, randomH);
+		Goval circles = Goval(randomPlace() , randSize, randSize, );
+//		GOval circles = new GOval (randomPlace(), randomSize())
+//		this.randomPlace= randomPlaceValue;
+		
+		circles.setFilled(true);
+		add(circles);
+	}
+
+	public Random randomSize() {
+		Random randSize = new Random(((MAX_SIZE - MIN_SIZE) + 1) + MIN_SIZE);
+//		System.out.print("randSize");
+//		System.out.println("randSize,randSize");
+		return randSize;
+	}
 	
-	private void createCircles() {		
-			int boundryX = getWidth();
-			int boundryY = getHeight();
-			Random rand = new Random();
-			int randomX = rand.nextInt(boundryX);
-			int randomY = rand.nextInt(boundryY);
-			int randomW = rand.nextInt(MIN_SIZE,MAX_SIZE);
-			int randomH = rand.nextInt(MIN_SIZE,MAX_SIZE);
-			GOval circles = new GOval (randomX, randomY, randomW, randomH);
-//			Color=;
-			circles.setFilled(true); 
-			add(circles);
-		}
-    }
+	public void randomPlace() {
+		
+		Random randPlaceX = new Random( getWidth() );
+		Random randPlaceY = new Random( getHeight() );
+//		return(randPlaceX, randPlaceY);
+		System.out.println("randPlaceX,randPlaceY,");
+		
+	}
+
+}
