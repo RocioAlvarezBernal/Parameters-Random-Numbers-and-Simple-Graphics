@@ -61,8 +61,9 @@ public class PRNSG extends GraphicsProgram{
 
 	public void run () {
 // since we know how many 10 circles create a circle randomly until all 10 are on screen 
-		for (i=1; i<=10; i++) {
-		
+		for (int i=1; i<=10; i++) {
+//goval generate random coordinate color and radius 
+			
 	}
 	
 	
