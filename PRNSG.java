@@ -11,7 +11,6 @@ b)The value of a parameter named x has no direct relationship with that of a var
 *File:Hogwarts.java*-------------------*This program is just testing your understanding of parameter passing.
 */
 
-
 //public class Hogwarts extends ConsoleProgram {
 //	public void run() {
 //		bludger(2001);
@@ -38,7 +37,6 @@ b)The value of a parameter named x has no direct relationship with that of a var
 //	}
 //}
 
-
 //Write a GraphicsProgram that draws a set of ten circles with different sizes, positions,
 //and colors. Each circle should have a randomly chosen color, a randomly chosen radius
 //between 5 and 50 pixels, and a randomly chosen position on the canvas, subject to the
@@ -48,25 +46,44 @@ b)The value of a parameter named x has no direct relationship with that of a var
 //psuedo code use random.blank or equivalent to generate random factors and set limits with a 
 //for loop between the specifications. 
 
-import acm.program.*;
-import acm.graphics.*; 
+//Usage: 	GOval goval = new GOval(x, y, width, height); 
+//Parameters: 	
+//x  	The x-coordinate of the upper left corner
+//y  	The y-coordinate of the upper left corner
+//width  	The width of the oval in pixels
+//height  	The height of the oval in pixels
 
-public class PRNSG extends GraphicsProgram{
+import acm.program.*;
+import acm.graphics.*;
+import java.util.Random;
+
+public class PRNSG extends GraphicsProgram {
 	// setting constants for para
 	private static final int MIN_SIZE = 5;
-	private static final int MAX_SIZE =50;
-	private static final int AMOUNT_OF_CIRCLES=10;
-	private static final int BOUNDRY_X= getWidth();
-	private static final int BOUNDRY_Y= getHeight();
-	
+	private static final int MAX_SIZE = 50;
+	private static final int AMOUNT_OF_CIRCLES = 10;
+//	private static final int BOUNDRY_X = getWidth();
+//	private static final int BOUNDRY_Y = getHeight();
+//    Random rand = new Random(); 
 
 	public void run () {
-// since we know how many 10 circles create a circle randomly until all 10 are on screen 
+		// since we know how many 10 circles create a circle randomly until all 10 are on screen 
 		for (int i=1; i<=10; i++) {
-//goval generate random coordinate color and radius 
-			GOval circles = new GOval(random)
-			
+			createCircles();
+		}
 	}
 	
-	
-}
+	private void createCircles() {		
+			int boundryX = getWidth();
+			int boundryY = getHeight();
+			Random rand = new Random();
+			int randomX = rand.nextInt(boundryX);
+			int randomY = rand.nextInt(boundryY);
+			int randomW = rand.nextInt(MIN_SIZE,MAX_SIZE);
+			int randomH = rand.nextInt(MIN_SIZE,MAX_SIZE);
+			GOval circles = new GOval (randomX, randomY, randomW, randomH);
+//			Color=;
+			circles.setFilled(true); 
+			add(circles);
+		}
+    }
