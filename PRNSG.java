@@ -57,10 +57,11 @@ public class PRNSG extends GraphicsProgram{
 	private static final int MAX_SIZE =50;
 	private static final int AMOUNT_OF_CIRCLES=10;
 	private static final int BOUNDRY_X= getWidth();
-	private static final int BOUNDRY_y= getHeight();
+	private static final int BOUNDRY_Y= getHeight();
 
 	public void run () {
-		
+// since we know how many 10 circles create a circle randomly until all 10 are on screen 
+		for (i=1; i<=10; i++) {
 		
 	}
 	
