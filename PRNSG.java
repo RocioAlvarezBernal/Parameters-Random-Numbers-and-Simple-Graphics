@@ -55,63 +55,55 @@ b)The value of a parameter named x has no direct relationship with that of a var
 
 import acm.program.*;
 import acm.graphics.*;
-import java.util.Random;
+import acm.util.RandomGenerator;
 
 public class PRNSG extends GraphicsProgram {
 	// setting constants for para
-	private static final int MIN_SIZE = 5;
-	private static final int MAX_SIZE = 50;
+	private static final double MIN_SIZE = 5;
+	private static final double MAX_SIZE = 50;
 	private static final int AMOUNT_OF_CIRCLES = 10;
-	int boundryX = getWidth();
-	int boundryY = getHeight();
-	Random rand = new Random();
+	double boundryX = getWidth();
+	double boundryY = getHeight();
+//	Random rand = new Random();
 
 	public void run() {
 		// since we know how many 10 circles create a circle randomly until all 10 are
 		// on screen
-		for (int i = 1; i <= 10; i++) {
+		for (int i = 1; i <= AMOUNT_OF_CIRCLES; i++) {
 			createCircles();
-			randomSize();
-			randomPlace();
-			
 		}
 	}
 
 	public void createCircles() {
-//		int boundryX = getWidth();
-//		int boundryY = getHeight();
-		
-//		int randomX = rand.nextInt(boundryX);
-//		int randomY = rand.nextInt(boundryY);
+		double randomX = createRandomX();
+		double randomY = createRandomY();
+		double randomWH = randomSize();
 
-//		int randomW = rand.nextInt(randomSize());
-//		Random randomW = ( randomSize() );
-//		int randomH = rand.nextInt(randomSize());
-//		Random randomH = ( randomSize() );
-		
-//		GOval circles = new GOval (randomX, randomY, randomW, randomH);
-		Goval circles = Goval(randomPlace() , randSize, randSize, );
-//		GOval circles = new GOval (randomPlace(), randomSize())
-//		this.randomPlace= randomPlaceValue;
-		
+		GOval circles = new GOval(randomX, randomY, randomWH, randomWH);
 		circles.setFilled(true);
 		add(circles);
 	}
 
-	public Random randomSize() {
-		Random randSize = new Random(((MAX_SIZE - MIN_SIZE) + 1) + MIN_SIZE);
-//		System.out.print("randSize");
-//		System.out.println("randSize,randSize");
-		return randSize;
+	public double randomSize() {
+		RandomGenerator randSize = RandomGenerator.getInstance();
+		double size = randSize.nextDouble(MIN_SIZE, MAX_SIZE);
+		return size;
 	}
-	
-	public void randomPlace() {
-		
-		Random randPlaceX = new Random( getWidth() );
-		Random randPlaceY = new Random( getHeight() );
-//		return(randPlaceX, randPlaceY);
-		System.out.println("randPlaceX,randPlaceY,");
-		
+
+//	
+	public double createRandomX() {
+		double boundryX = getWidth();
+		RandomGenerator createRandomX = RandomGenerator.getInstance();
+		double placeX = createRandomX.nextDouble(0.0, boundryX);
+		return placeX;
 	}
+
+	public double createRandomY() {
+		double boundryY = getHeight();
+		RandomGenerator createRandomY = RandomGenerator.getInstance();
+		double placeY = createRandomY.nextDouble(0.0, boundryY);
+		return placeY;
+	}
+
 
 }
