@@ -54,13 +54,14 @@ b)The value of a parameter named x has no direct relationship with that of a var
 //height  	The height of the oval in pixels
 
 import acm.program.*;
+import java.awt.Color;
 import acm.graphics.*;
 import acm.util.RandomGenerator;
 
 public class PRNSG extends GraphicsProgram {
 	// setting constants for para
 	private static final double MIN_SIZE = 5;
-	private static final double MAX_SIZE = 50;
+	private static final double MAX_SIZE = 100;
 	private static final int AMOUNT_OF_CIRCLES = 10;
 	double boundryX = getWidth();
 	double boundryY = getHeight();
@@ -81,6 +82,8 @@ public class PRNSG extends GraphicsProgram {
 
 		GOval circles = new GOval(randomX, randomY, randomWH, randomWH);
 		circles.setFilled(true);
+		randomColor();
+		circles.setColor(randomColor());
 		add(circles);
 	}
 
@@ -104,6 +107,16 @@ public class PRNSG extends GraphicsProgram {
 		double placeY = createRandomY.nextDouble(0.0, boundryY);
 		return placeY;
 	}
+	
+	public Color randomColor() {
+		RandomGenerator ranColor = RandomGenerator.getInstance();
+		Color coloring = ranColor.nextColor();
+		return coloring;
+//		return ranColor;
+//		System.out.print(ranColor);
+//		Color test = ranColor.nextColor();
+	}
+
 
 
 }
