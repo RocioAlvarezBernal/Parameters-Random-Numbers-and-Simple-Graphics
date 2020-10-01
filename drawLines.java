@@ -9,24 +9,33 @@ import acm.program.*;
 
 public class drawLines extends GraphicsProgram {
 	public void run() {
-		draw(){
-			startPoint();
-			endPoint();
+//		draw(){
+//			startPoint();
+//			endPoint();
+		line();
 		}
 		
-	private void startPoint(mouse) {
-		getCoordinates()
-		
+	private void line() {
+		GObject line = new GLine(startPoint(),endPoint());
 	}
-	private void endPoint(mouse) {
-		getCoordinates()
 		
+	private void startPoint(MOUSE_CLICKED start) {
+//		getCoordinates()
+		double lineStartPoint = getPoint()
+		return lineStartPoint;
+
+	}
+	private void endPoint(MOUSE_CLICKED end) {
+//		getCoordinates()
+		double lineEndPoint = getPoint();
+		return lineEndPoint;
 	}
 	
-	private void getCoordinates() {
-		double xCoordinate = ;
-		double yCoordinate = ;
-		double xy = (xCoordinate, yCoordinate)
+//	private void getCoordinates() {
+//		double xCoordinate = ;
+//		double yCoordinate = ;
+//		double xy = (xCoordinate, yCoordinate)
+		getPoint()
 	}
 
 
