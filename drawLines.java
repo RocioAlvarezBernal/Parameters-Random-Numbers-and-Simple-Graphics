@@ -16,38 +16,53 @@ public class drawLines extends GraphicsProgram {
 //		draw(){
 //			startPoint();
 //			endPoint();
-		line();
+//		ALine();
 //		addMouseListener = MouseEvent;
+//		addMouseListeners(MouseEvent);
 		addMouseListeners();
 
-		}
-		
-	private void line() {
-		String sXY = (double) startPoint();
-		String eXY = (double) endPoint();
+	}
 
-		GObject line = new GLine(sXY,eXY);
-		add(line);
+	public GObject line(MouseEvent coordinates) {
+		GObject drawingLine = new GLine(startX,startY,endX,endY);
+		add(drawingLine);
 	}
-		
-	private Point startPoint(MouseEvent start) {
+//		
+	public void startPoints(MouseEvent start) {
 //		getCoordinates()
-		Point lineStartPoint = start.getPoint();
-		return lineStartPoint;
+		double startX = start.getX();
+		double startY = start.getY();		
+//		int lineStartPoint = start.getPoint();
+//		return startX, startY;
+//		System.out.print(startX, startY;);
+		line();
+		GLine.setStartPoint(startX, startY);
+		
+	}
+
+	public void endPoints(MouseEvent end) {
+//		getCoordinates()
+		double endX = end.getX();
+		double endY = end.getY();
+		GLine.setEndPoint.(endX, endY); 
 
 	}
-	private Point endPoint(MouseEvent end) {
-//		getCoordinates()
-		Point lineEndPoint = end.getPoint();
-		return lineEndPoint;
-	}
-	
+
 //	private void getCoordinates() {
 //		double xCoordinate = ;
 //		double yCoordinate = ;
 //		double xy = (xCoordinate, yCoordinate)
 //		getPoint()
 //	}
+//	}
+
+////	public void getCoordinates(MouseEvent coordinates) {
+//		double endX = coordinates.getX();
+//		double endY = coordinates.getY();
+//		double startX = coordinates.getX();
+//		double startY = coordinates.getY();
+////		GLine.setStartPoint(startX, startY);
+////		GLine.setEndPoint(endX, endY); 
 //	}
 
 }
