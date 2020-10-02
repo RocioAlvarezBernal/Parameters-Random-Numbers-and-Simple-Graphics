@@ -1,68 +1,82 @@
 //Psuedo code 
 //listen for click get start coordinate draw a line to end click coordinates
-
+//https://docs.oracle.com/javase/tutorial/uiswing/events/mousemotionlistener.html
 //import java.awt.event.MouseEvent;
-import java.awt.Point;
+//import java.awt.Point;
 import java.awt.event.*;
 import acm.graphics.*;
 import acm.program.*;
 //import acm.program.GraphicsProgram;
-//MouseEvent mouse = MOUSE_CLICKED;
+//MouseEvent MouseEvent = MOUSE_CLICKED;
 //public static final int MOUSE_CLICKED = 0 ;
 //addMouseListener = MouseEvent;
 
 public class drawLines extends GraphicsProgram {
+	
 	public void run() {
-//		draw(){
-//			startPoint();
-//			endPoint();
-//		ALine();
-//		addMouseListener = MouseEvent;
-//		addMouseListeners(MouseEvent);
+		draw(){
+			startPoint();
+			endPoint();
+		line(null);
+		addMouseListener = MouseEvent;
+		addMouseListeners(MouseEvent);
 		addMouseListeners();
+		addMouseMotionListener(MouseMotionListener listener);
 
 	}
 
-	public GObject line(MouseEvent coordinates) {
+	public GObject line(double startX, double startY,double endX, double endY) {
+	public void mousePressed(MouseEvent start) {
+		double startX = start.getX();
+		double startY = start.getY();
 		GObject drawingLine = new GLine(startX,startY,endX,endY);
+		drawingLine.setLocation(startX, startY);
 		add(drawingLine);
 	}
-//		
-	public void startPoints(MouseEvent start) {
-//		getCoordinates()
+
+	public double startPoints(MouseEvent start) {
+		getCoordinates()
 		double startX = start.getX();
 		double startY = start.getY();		
-//		int lineStartPoint = start.getPoint();
-//		return startX, startY;
-//		System.out.print(startX, startY;);
-		line();
-		GLine.setStartPoint(startX, startY);
-		
+		int lineStartPoint = start.getPoint();
+		return startX, startY;
+		System.out.print(startX, startY;);
+		GObject drawingLine = new GLine(startX,startY,endX,endY);
+		add(drawingLine);
+		drawingLine.setStartPoint(startX, startY);
+
 	}
 
-	public void endPoints(MouseEvent end) {
-//		getCoordinates()
+	public void mouseDragged (MouseEvent end) {
+		getCoordinates()
 		double endX = end.getX();
 		double endY = end.getY();
-		GLine.setEndPoint.(endX, endY); 
-
+		drawingLine.setEndPoint(endX,endY);
 	}
 
-//	private void getCoordinates() {
-//		double xCoordinate = ;
-//		double yCoordinate = ;
-//		double xy = (xCoordinate, yCoordinate)
-//		getPoint()
-//	}
-//	}
+	private void getCoordinates() {
+		double xCoordinate = ;
+		double yCoordinate = ;
+		double xy = (xCoordinate, yCoordinate)
+		getPoint()
+	}
+	}
 
-////	public void getCoordinates(MouseEvent coordinates) {
-//		double endX = coordinates.getX();
-//		double endY = coordinates.getY();
-//		double startX = coordinates.getX();
-//		double startY = coordinates.getY();
-////		GLine.setStartPoint(startX, startY);
-////		GLine.setEndPoint(endX, endY); 
-//	}
-
+	public void getCoordinates(MouseEvent coordinates) {
+		double endX = coordinates.getX();
+		double endY = coordinates.getY();
+		double startX = coordinates.getX();
+		double startY = coordinates.getY();
+		GLine.setStartPoint(startX, startY);
+		GLine.setEndPoint(endX, endY); 
+	}
+	????? don't need to be an object to be a instance 
+	public GLine drawingLine;
+	
+	public class drawLines (MouseEvent mouseDragged){
+		this.startX = startX;
+		this.startY = startY;
+		this.endX = endX;
+		this.endY = endY;
+	}
 }
