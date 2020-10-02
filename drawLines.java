@@ -1,15 +1,15 @@
-//Psuedo code 
-//listen for click get start coordinate draw a line to end click coordinates
-//https://docs.oracle.com/javase/tutorial/uiswing/events/mousemotionlistener.html
-//import java.awt.event.MouseEvent;
-//import java.awt.Point;
+Psuedo code 
+listen for click get start coordinate draw a line to end click coordinates
+https://docs.oracle.com/javase/tutorial/uiswing/events/mousemotionlistener.html
+import java.awt.event.MouseEvent;
+import java.awt.Point;
 import java.awt.event.*;
 import acm.graphics.*;
 import acm.program.*;
-//import acm.program.GraphicsProgram;
-//MouseEvent MouseEvent = MOUSE_CLICKED;
-//public static final int MOUSE_CLICKED = 0 ;
-//addMouseListener = MouseEvent;
+import acm.program.GraphicsProgram;
+MouseEvent MouseEvent = MOUSE_CLICKED;
+public static final int MOUSE_CLICKED = 0 ;
+addMouseListener = MouseEvent;
 
 public class drawLines extends GraphicsProgram {
 	
