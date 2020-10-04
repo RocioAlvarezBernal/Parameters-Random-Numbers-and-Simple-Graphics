@@ -34,6 +34,7 @@ public class drawLines extends GraphicsProgram {
 //		drawingLine.setLocation(startX, startY);
 //		add(drawingLine);
 //	}
+// creating an instance variable 
 	private GLine drawingLine;
 
 	public void mousePressed(MouseEvent start){
@@ -46,13 +47,11 @@ public class drawLines extends GraphicsProgram {
 		drawingLine = new GLine (start.getX(), start.getY(),start.getX(),start.getY());
 		add(drawingLine);
 //		drawingLine.setStartPoint(startX, startY);
-//
 	}
-//
+	
 	public void mouseDragged (MouseEvent end) {
-//		getCoordinates()
-//		double endX = end.getX();
-//		double endY = end.getY();
+		end.getX();
+		end.getY();
 		drawingLine.setEndPoint(end.getX(),end.getY());
 	}
 //
