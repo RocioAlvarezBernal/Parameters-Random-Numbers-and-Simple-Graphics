@@ -7,7 +7,7 @@ import acm.util.RandomGenerator;
 public class PRNSG extends GraphicsProgram {
 	// setting constants for para
 	private static final double MIN_SIZE = 5;
-	private static final double MAX_SIZE = 100;
+	private static final double MAX_SIZE = 50;
 	private static final int AMOUNT_OF_CIRCLES = 10;
 	double boundryX = getWidth();
 	double boundryY = getHeight();
@@ -26,7 +26,7 @@ public class PRNSG extends GraphicsProgram {
 		double randomY = createRandomY();
 		double randomWH = randomSize();
 
-		GOval circles = new GOval(randomX, randomY, randomWH, randomWH);
+		GOval circles = new GOval((randomX/2), (randomY/2), randomWH, randomWH);
 		circles.setFilled(true);
 		randomColor();
 		circles.setColor(randomColor());
